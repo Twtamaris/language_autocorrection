@@ -1,0 +1,286 @@
+Calculate the factorial of a number:
+
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+Check if a string is a palindrome:
+
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("radar"))  # Output: True
+Find the largest element in a list:
+
+
+def find_max(lst):
+    return max(lst)
+
+numbers = [5, 8, 2, 10, 3]
+print(find_max(numbers))  # Output: 10
+Reverse a string:
+
+
+def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string("hello"))  # Output: 'olleh'
+Implement a stack:
+
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return not self.items
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[-1] if self.items else None
+
+    def size(self):
+        return len(self.items)
+
+stack = Stack()
+stack.push(5)
+stack.push(10)
+print(stack.pop())  # Output: 10
+Sort a list using bubble sort:
+
+
+def bubble_sort(lst):
+    n = len(lst)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if lst[j] > lst[j + 1]:
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
+
+numbers = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(numbers)
+print(numbers)  # Output: [11, 12, 22, 25, 34, 64, 90]
+Calculate the Fibonacci sequence:
+
+
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    while len(fib_sequence) < n:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
+
+print(fibonacci(8))  # Output: [0, 1, 1, 2, 3, 5, 8, 13]
+Find the common elements between two lists:
+
+
+def common_elements(list1, list2):
+    return list(set(list1) & set(list2))
+
+list_a = [1, 2, 3, 4, 5]
+list_b = [3, 4, 5, 6, 7]
+print(common_elements(list_a, list_b))  # Output: [3, 4, 5]
+Count the occurrence of each word in a string:
+
+
+def word_count(sentence):
+    words = sentence.split()
+    word_frequency = {}
+    for word in words:
+        word_frequency[word] = word_frequency.get(word, 0) + 1
+    return word_frequency
+
+text = "This is a simple example. Simple is as simple does."
+print(word_count(text))
+# Output: {'This': 1, 'is': 2, 'a': 1, 'simple': 2, 'example.': 1, 'Simple': 1, 'as': 1, 'does.': 1}
+Check if a number is prime:
+
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+print(is_prime(17))  # Output: True
+Calculate the square root of a number:
+
+
+import math
+
+def square_root(num):
+    return math.sqrt(num)
+
+print(square_root(16))  # Output: 4.0
+Remove duplicates from a list:
+
+
+def remove_duplicates(lst):
+    return list(set(lst))
+
+numbers = [1, 2, 2, 3, 4, 4, 5]
+print(remove_duplicates(numbers))  # Output: [1, 2, 3, 4, 5]
+Find the second smallest element in a list:
+
+
+def second_smallest(lst):
+    unique_elements = sorted(set(lst))
+    if len(unique_elements) > 1:
+        return unique_elements[1]
+    else:
+        return None
+
+numbers = [5, 8, 2, 10, 3]
+print(second_smallest(numbers))  # Output: 3
+Reverse a linked list:
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def reverse_linked_list(head):
+    prev, current = None, head
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
+    return prev
+
+# Example usage:
+# (Assuming you have a linked list with nodes, and 'head' is the reference to the head node)
+# reversed_head = reverse_linked_list(head)
+Generate a random password:
+
+
+import random
+import string
+
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+
+print(generate_password(12))
+Find the intersection of two arrays:
+
+
+def array_intersection(arr1, arr2):
+    return list(set(arr1) & set(arr2))
+
+array_a = [1, 2, 3, 4, 5]
+array_b = [3, 4, 5, 6, 7]
+print(array_intersection(array_a, array_b))  # Output: [3, 4, 5]
+Calculate the area of a circle:
+
+
+def circle_area(radius):
+    return math.pi * radius**2
+
+print(circle_area(5))  # Output: 78.53981633974483
+Check if a year is a leap year:
+
+
+
+Check if a year is a leap year:
+
+def is_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    else:
+        return False
+
+print(is_leap_year(2024))  # Output: True
+Calculate the sum of all elements in a list:
+
+
+def sum_of_elements(lst):
+    return sum(lst)
+
+numbers = [1, 2, 3, 4, 5]
+print(sum_of_elements(numbers))  # Output: 15
+Check if a number is an Armstrong number:
+
+
+def is_armstrong(num):
+    order = len(str(num))
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** order
+        temp //= 10
+    return num == sum
+
+print(is_armstrong(153))  # Output: True
+Find the greatest common divisor (GCD) of two numbers:
+
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+print(gcd(24, 36))  # Output: 12
+Check if a string is an anagram:
+
+
+def is_anagram(str1, str2):
+    return sorted(str1) == sorted(str2)
+
+print(is_anagram("listen", "silent"))  # Output: True
+Find the factorial of a number using recursion:
+
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+Check if a number is a perfect number:
+
+
+def is_perfect_number(num):
+    divisors = [i for i in range(1, num) if num % i == 0]
+    return sum(divisors) == num
+
+print(is_perfect_number(28))  # Output: True
+Count the number of vowels in a string:
+
+
+def count_vowels(string):
+    vowels = "aeiouAEIOU"
+    return sum(1 for char in string if char in vowels)
+
+print(count_vowels("Hello World"))  # Output: 3
+Generate the Fibonacci sequence using recursion:
+
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+sequence = [fibonacci(i) for i in range(8)]
+print(sequence)  # Output: [0, 1, 1, 2, 3, 5, 8, 13]
+Remove all duplicates from a string:
+
+
+def remove_duplicates(string):
+    return ''.join(sorted(set(string), key=string.index))
+
+print(remove_duplicates("hello"))  # Output: 'helo'
