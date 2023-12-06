@@ -1,6 +1,4 @@
 
-Certainly! Here are examples with answers for each of the 20 programming-related questions:
-
 Difference between "append" and "extend" in Python lists:
 
 python
