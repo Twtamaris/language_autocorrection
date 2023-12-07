@@ -1,22 +1,31 @@
 word = " च इ य अ"
 
 
-new_word = word.replace("आ", "ा")
-# new_word = word.replace("उ", "ु")
-new_word = word.replace("ई", "ी")  
-# for इ
-new_word = word.replace("इ", "ि")
-new_word = word.replace("ऊ", "ू")
-# new_word = word.replace("ई", "ी")
-new_word = word.replace("ऊ", "ू")
-new_word = word.replace("ऋ", "ृ")
-new_word = word.replace("ए", "े")
-new_word = word.replace("ऐ", "ै")
-new_word = word.replace("ओ", "ो")
-new_word = word.replace("औ", "ौ")
-new_word = word.replace("अं", "ँ")
-new_word = word.replace("अः", "ः")
-new_word = word.replace("अ", "ा")
+
+
+for letters in word:
+    print(letters, end=' ')
+
+dict_1 = {
+    "आ" : "ा",
+    "उ" : "ु",
+    "ई" : "ी",
+    "इ" : "ि",
+    "ऊ" : "ू",
+    "ऋ" : "ृ",
+    "ए" : "े",
+    "ऐ" : "ै",
+    "ओ" : "ो",
+    "औ" : "ौ",
+    "अं" : "ँ",
+    "अः" : "ः",
+    "अ" : "ा"
+}
+# remove space from the word
+word = word.replace(" ", "")
+for words in dict_1:
+    
+    new_word = word.replace(words, dict_1[words])
 
 
 # print(new_word)
